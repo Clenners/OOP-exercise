@@ -10,16 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var player1HpLbl: UILabel!
+    @IBOutlet weak var player2HpLbl: UILabel!
+    @IBOutlet weak var player1Img: UIImageView!
+    @IBOutlet weak var player2Img: UIImageView!
+    @IBOutlet weak var printLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //TODO: create both players. user decides name and type of player.
+        //TODO: populate labels with hp
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func player1Attacks(sender: UIButton) {
+        
     }
-
+    
+    @IBAction func player2Attacks(sender: UIButton) {
+        
+    }
+    
+    
 
 }
 

@@ -12,6 +12,9 @@
 		F905C4871D008CDA0032DE80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F905C4851D008CDA0032DE80 /* Main.storyboard */; };
 		F905C4891D008CDA0032DE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F905C4881D008CDA0032DE80 /* Assets.xcassets */; };
 		F905C48C1D008CDA0032DE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F905C48A1D008CDA0032DE80 /* LaunchScreen.storyboard */; };
+		F905C4941D0189460032DE80 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F905C4931D0189460032DE80 /* Character.swift */; };
+		F905C4961D01898D0032DE80 /* Ogre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F905C4951D01898D0032DE80 /* Ogre.swift */; };
+		F905C4981D01899B0032DE80 /* Soldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F905C4971D01899B0032DE80 /* Soldier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F905C4881D008CDA0032DE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F905C48B1D008CDA0032DE80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F905C48D1D008CDA0032DE80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F905C4931D0189460032DE80 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		F905C4951D01898D0032DE80 /* Ogre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ogre.swift; sourceTree = "<group>"; };
+		F905C4971D01899B0032DE80 /* Soldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soldier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				F905C4881D008CDA0032DE80 /* Assets.xcassets */,
 				F905C48A1D008CDA0032DE80 /* LaunchScreen.storyboard */,
 				F905C48D1D008CDA0032DE80 /* Info.plist */,
+				F905C4931D0189460032DE80 /* Character.swift */,
+				F905C4951D01898D0032DE80 /* Ogre.swift */,
+				F905C4971D01899B0032DE80 /* Soldier.swift */,
 			);
 			path = "OOP-exercise";
 			sourceTree = "<group>";
@@ -136,7 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F905C4941D0189460032DE80 /* Character.swift in Sources */,
+				F905C4981D01899B0032DE80 /* Soldier.swift in Sources */,
 				F905C4841D008CD90032DE80 /* ViewController.swift in Sources */,
+				F905C4961D01898D0032DE80 /* Ogre.swift in Sources */,
 				F905C4821D008CD90032DE80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,34 +16,45 @@ class ViewController: UIViewController {
     @IBOutlet weak var player2Img: UIImageView!
     @IBOutlet weak var printLbl: UILabel!
     
+    var player1: Ogre!
+    var player2: Soldier!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // allows image to be tapped like a button
-        /*let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(ViewController.onCharacterChosen(_:)))
-        player1Img.userInteractionEnabled = true
-        player1Img.addGestureRecognizer(tapGestureRecognizer)
-        player2Img.userInteractionEnabled = true
-        player2Img.addGestureRecognizer(tapGestureRecognizer)
-        */
         startGame()
-        /*
-        this code flips the image!!
-        player1Img.transform = CGAffineTransformMakeScale(-1, 1);
-        */
         
         //TODO: create both players. user decides name and type of player.
-        
-        //TODO: populate labels with hp
         
     }
 
     @IBAction func player1Attacks(sender: UIButton) {
-        
+        if player2.isAlive {
+            player2.attacked(player1.attackPower)
+            player2HpLbl.text = "\(player2.hp) HP"
+            printLbl.text = "\(player1.name) attacked \(player2.name)!"
+            
+            if !player2.isAlive {
+                player2HpLbl.hidden = true
+                player2Img.hidden = true
+                printLbl.text = "\(player1.name) defeated \(player2.name)!"
+            }
+        }
     }
     
     @IBAction func player2Attacks(sender: UIButton) {
-        
+        if player1.isAlive {
+            player1.attacked(player1.attackPower)
+            player1HpLbl.text = "\(player1.hp) HP"
+            printLbl.text = "\(player2.name) attacked \(player1.name)!"
+            
+            if !player1.isAlive {
+                player1HpLbl.hidden = true
+                player1Img.hidden = true
+                printLbl.text = "\(player2.name) defeated \(player1.name)!"
+            }
+        }
     }
     
     func onCharacterChosen(sender: UIImageView) {
@@ -52,12 +63,15 @@ class ViewController: UIViewController {
     
     func startGame() {
         printLbl.text = "Welcome to this shitty game!"
-        delay(2) {
-            self.printLbl.text = "Player1 choose your character"
+        
+        player1 = Ogre(hp: 80, attackPower: 30, name: "Jazza")
+        player2 = Soldier(hp: 110, attackPower: 20, name: "Zach")
+        
+        player1HpLbl.text = "\(player1.hp) HP"
+        player2HpLbl.text = "\(player2.hp) HP"
+        
         }
-        
-        
-    }
+    
     
     func delay(delay:Double, closure:()->()) {
         dispatch_after(

@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="58" id="eiS-nS-EBK"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ogre appeared out of nowhere!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoo-nn-2B4" userLabel="print label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restart?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoo-nn-2B4" userLabel="print label">
                                 <rect key="frame" x="139" y="552" width="322" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,6 +107,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-0X-4ju">
+                                <rect key="frame" x="378" y="547" width="30" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRestartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8TW-cN-xlx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -118,6 +128,7 @@
                             <constraint firstItem="fLX-Xn-Gk9" firstAttribute="baseline" secondItem="UXg-LD-nVS" secondAttribute="baseline" id="6vi-91-PJL"/>
                             <constraint firstItem="zFZ-ah-qAO" firstAttribute="top" secondItem="p1q-IV-mSa" secondAttribute="bottom" id="E7d-f6-Oxr"/>
                             <constraint firstItem="UXg-LD-nVS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EPv-Wy-0vX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ab4-0X-4ju" secondAttribute="bottom" constant="20" id="Gfq-DC-CJZ"/>
                             <constraint firstAttribute="trailing" secondItem="fLX-Xn-Gk9" secondAttribute="trailing" constant="20" id="IYW-Zs-0KP"/>
                             <constraint firstItem="iCP-Kd-8Xy" firstAttribute="centerX" secondItem="w2d-NY-9oJ" secondAttribute="centerX" id="Lt2-Rg-wdg"/>
                             <constraint firstAttribute="trailing" secondItem="Vb1-Sm-e0d" secondAttribute="trailing" constant="32" id="MaX-Wb-tFc"/>
@@ -125,6 +136,7 @@
                             <constraint firstItem="vrp-Jy-IeF" firstAttribute="centerX" secondItem="2Pl-cA-VEQ" secondAttribute="centerX" id="Ptw-Ox-63Y"/>
                             <constraint firstItem="zFZ-ah-qAO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qdk-a4-hMf"/>
                             <constraint firstItem="2Pl-cA-VEQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="53" id="Qmg-7O-o2T"/>
+                            <constraint firstItem="ab4-0X-4ju" firstAttribute="trailing" secondItem="RxS-67-TAr" secondAttribute="trailing" constant="-68" id="U5U-jL-Omb"/>
                             <constraint firstItem="xeU-be-bu0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VVN-i4-JlI"/>
                             <constraint firstItem="p1q-IV-mSa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="Wm5-dB-260"/>
                             <constraint firstAttribute="trailing" secondItem="zFZ-ah-qAO" secondAttribute="trailing" id="ezD-Qi-iR0"/>
@@ -141,11 +153,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="player1Btn" destination="2Pl-cA-VEQ" id="9TO-uQ-W1M"/>
                         <outlet property="player1HpLbl" destination="UXg-LD-nVS" id="BM8-yl-kdN"/>
                         <outlet property="player1Img" destination="p1q-IV-mSa" id="BIY-fh-qtU"/>
+                        <outlet property="player2Btn" destination="w2d-NY-9oJ" id="zuM-R3-Dc3"/>
                         <outlet property="player2HpLbl" destination="fLX-Xn-Gk9" id="UEh-lI-d5B"/>
                         <outlet property="player2Img" destination="Vb1-Sm-e0d" id="CFa-ET-meP"/>
                         <outlet property="printLbl" destination="xoo-nn-2B4" id="3sg-yU-ivP"/>
+                        <outlet property="restartYes" destination="ab4-0X-4ju" id="UX4-DC-ELp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

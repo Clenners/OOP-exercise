@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1Img: UIImageView!
     @IBOutlet weak var player2Img: UIImageView!
     @IBOutlet weak var printLbl: UILabel!
+    @IBOutlet weak var player1Btn: UIButton!
+    @IBOutlet weak var player2Btn: UIButton!
+    @IBOutlet weak var restartYes: UIButton!
     
     var player1: Ogre!
     var player2: Soldier!
@@ -39,7 +42,15 @@ class ViewController: UIViewController {
                 player2HpLbl.hidden = true
                 player2Img.hidden = true
                 printLbl.text = "\(player1.name) defeated \(player2.name)!"
+                delay(3){
+                    self.printLbl.text = "Restart?"
+                    self.restartYes.hidden = false
+                }
             }
+            player2Btn.enabled = false
+            delay(2) {
+                self.player2Btn.enabled = true
+                }
         }
     }
     
@@ -53,17 +64,30 @@ class ViewController: UIViewController {
                 player1HpLbl.hidden = true
                 player1Img.hidden = true
                 printLbl.text = "\(player2.name) defeated \(player1.name)!"
+                delay(2){
+                    self.printLbl.text = "Restart?"
+                    self.restartYes.hidden = false
+                }
+            }
+            player1Btn.enabled = false
+            delay(3) {
+                self.player1Btn.enabled = true
             }
         }
     }
     
-    func onCharacterChosen(sender: UIImageView) {
-        
+    @IBAction func onRestartGame(sender: AnyObject) {
+        viewDidLoad()
     }
     
     func startGame() {
         printLbl.text = "Welcome to this shitty game!"
         
+        restartYes.hidden = true
+        player1Img.hidden = false
+        player2Img.hidden = false
+        player1HpLbl.hidden = false
+        player2HpLbl.hidden = false
         player1 = Ogre(hp: 80, attackPower: 30, name: "Jazza")
         player2 = Soldier(hp: 110, attackPower: 20, name: "Zach")
         
